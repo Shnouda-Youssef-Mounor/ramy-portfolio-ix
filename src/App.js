@@ -1,10 +1,11 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route, HashRouter } from "react-router-dom";
 import ProjectDetails from "./screens/ProjectDetails";
 import HomeScreen from "./screens/home";
 import "./styles/main.css";
+
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         {/* Home */}
         <Route path="/" element={<HomeScreen />} />
@@ -12,7 +13,7 @@ function App() {
         {/* Details */}
         <Route path="/project/:slug" element={<ProjectDetails />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
