@@ -1,0 +1,117 @@
+/* ── About ────────────────────────────────────────── */
+.about-section {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: var(--gap);
+height: 360px;   align-items: stretch;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background-color: var(--surface);
+  overflow: hidden;
+  margin-top: 32px;
+  padding: 48px;
+}
+
+.about-avatar {
+  position: relative;
+  overflow: hidden;
+}
+
+.about-avatar-img {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: bottom center;
+  will-change: transform, opacity;
+      transform: translateX(-50%);
+
+  object-fit: contain;
+  object-position: bottom center;
+  mask-image: linear-gradient(to top, transparent 0%, black 35%);
+  -webkit-mask-image: linear-gradient(to top, transparent 0%, black 35%);
+}
+
+.about-content {
+
+  padding: 40px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+
+.about-content h2 {
+
+  color: var(--text);
+      font-family: "Satoshi", "Satoshi Placeholder", sans-serif;
+    font-size: 42px;
+   font-weight: 500;
+   letter-spacing: -0.04em;
+   line-height: 1.1em;
+}
+
+.italic-highlight {
+ font-family: "Instrument Serif", "Instrument Serif Placeholder", serif;
+  font-style: italic;}
+
+.about-content p {
+
+  color: var(--muted-text);
+
+
+  font-family: "Satoshi", "Satoshi Placeholder", sans-serif;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 500;
+        letter-spacing: -.02em;
+        line-height: 1.5em;
+        text-decoration: none;
+        text-transform: none;
+}
+
+/* Button */
+.browse-work-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 40px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var( --muted-text);
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 500;
+  width: fit-content;
+  transition: background 0.2s, color 0.2s, border-color 0.2s, gap 0.2s;
+}
+.browse-work-button:hover {
+  background: var(--text);
+  color: #000;
+  border-color: transparent;
+  gap: 14px;
+}
+.button-icon {
+  width: 14px; height: 14px;
+  fill: currentColor;
+  transition: transform 0.2s;
+}
+.browse-work-button:hover .button-icon { transform: translateX(3px); }
+.button-text { font-size: 12px; font-weight: 500; }
+
+/* ── Responsive ───────────────────────────────────── */
+@media (max-width: 768px) {
+  .about-section {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+  .about-avatar  { height: 500px; }
+  .about-content { height: 500px; padding: 32px; }
+}
+
+@media (max-width: 480px) {
+  .about-content { padding: 24px; }
+  .about-content h2 { font-size: 1.4rem; }
+}

@@ -1,0 +1,174 @@
+/* ── Contact ──────────────────────────────────────── */
+.contactus-section {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: var(--gap);
+  height: 420px;
+  align-items: stretch;
+    background: #0d0d0d;
+      border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-top: 32px;
+
+}
+
+/* LEFT — content */
+.contactus-content {
+
+  padding: 40px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 24px;
+}
+
+.contactus-content h2 {
+  font-family: "Satoshi", sans-serif;
+  font-size: clamp(1.8rem, 2.8vw, 2.6rem);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+  color: #F5F5F8;
+}
+
+.italic-highlight {
+  font-family: "Instrument Serif", serif;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 0;
+  color: #F5F5F8;
+}
+
+/* Service cards */
+.contactus-items {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.contactus-item {
+  flex: 1;
+  padding: 16px 20px;
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: border-color 0.2s;
+}
+.contactus-item:hover { border-color: rgba(255,255,255,0.12); }
+
+.contactus-item-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contactus-item-title {
+  font-family: "Satoshi", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: #F5F5F8;
+  margin: 0;
+}
+
+.contactus-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 40px;
+  border: 1px solid var(--border);
+  font-family: "Satoshi", sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: #FCFCFA;
+  white-space: nowrap;
+  background: rgba(255,255,255,0.04);
+}
+
+.contactus-item-description {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--muted-text);
+  margin: 0;
+}
+
+/* Button */
+.cta-full {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(13, 13, 13, 0.5);
+  backdrop-filter: blur(10px);
+  box-shadow:
+    rgba(0,0,0,0.1) 0px 4px 10px -2px,
+    rgba(0,0,0,0.1) 0px 2px 2px -1px,
+    rgba(255,255,255,0.1) 0px 0px 0px 1px;
+  color: #F5F5F8;
+  cursor: pointer;
+  font-family: "Satoshi", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  outline: 2px solid transparent;
+  outline-offset: 0px;
+  transition:
+    background 0.6s ease,
+    box-shadow 0.6s ease,
+    outline-color 0.6s ease,
+    outline-offset 0.6s ease;
+}
+.cta-full:hover {
+  background: rgba(13,13,13,0.8);
+  outline-color: rgba(255,255,255,0.25);
+  outline-offset: 4px;
+  box-shadow:
+    rgba(0,0,0,0.2) 0px 6px 14px -2px,
+    rgba(255,255,255,0.12) 0px 0px 0px 1px;
+}
+.cta-full svg { flex-shrink: 0; }
+
+/* RIGHT — avatar */
+.contactus-avatar {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.contactus-avatar-img {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 85%;
+  height: 90%;
+    transform: translateX(-50%);
+
+  object-fit: contain;
+  object-position: bottom center;
+  mask-image: linear-gradient(to top, transparent 0%, black 35%);
+  -webkit-mask-image: linear-gradient(to top, transparent 0%, black 35%);
+}
+
+/* ── Responsive ───────────────────────────────────── */
+@media (max-width: 768px) {
+  .contactus-section {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+  .contactus-content { height: 500px; padding: 32px; }
+  .contactus-avatar  { height: 500px; }
+  .contactus-items   { flex-direction: column; }
+}
+
+@media (max-width: 480px) {
+  .contactus-content { padding: 24px; }
+  .contactus-content h2 { font-size: 1.6rem; }
+  .contactus-item-title { font-size: 15px; }
+}
