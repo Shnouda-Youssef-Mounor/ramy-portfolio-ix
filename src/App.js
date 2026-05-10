@@ -1,19 +1,16 @@
-import { Routes, Route, HashRouter } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ProjectDetails from "./screens/ProjectDetails";
 import HomeScreen from "./screens/home";
 import "./styles/main.css";
 
 function App() {
   return (
-    <HashRouter>
+    <BrowserRouter>
       <Routes>
-        {/* Home */}
         <Route path="/" element={<HomeScreen />} />
-
-        {/* Details */}
         <Route path="/project/:slug" element={<ProjectDetails />} />
       </Routes>
-    </HashRouter>
+    </BrowserRouter>
   );
 }
 
