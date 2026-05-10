@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import "../../styles/ContactModal.css";
 import ContactForm from "../forms/ContactForm";
 

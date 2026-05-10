@@ -5,33 +5,14 @@ import { useProjects } from "../hooks/useProjects";
 import imageUrlBuilder from "@sanity/image-url";
 import { client } from "../api/sanity";
 import "../styles/ProjectDetails.css";
-import { useScroll, useSpring } from "framer-motion";
 import Lenis from "@studio-freight/lenis"; // Initialize Sanity image URL builder
 const builder = imageUrlBuilder(client);
 
 function urlFor(source) {
   return builder.image(source);
 }
-const fadeUp = {
-  hidden: { opacity: 0, y: 60 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.9,
-      ease: [0.22, 1, 0.36, 1],
-    },
-  },
-};
 
 const ProjectDetails = () => {
-  const { scrollYProgress } = useScroll();
-
-  const scaleX = useSpring(scrollYProgress, {
-    stiffness: 80,
-    damping: 25,
-  });
-
   const { slug } = useParams();
   const { projects, loading } = useProjects();
   useEffect(() => {
