@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/ramy-portfolio-ix/static/css/main.b5371597.css",
-    "main.js": "/ramy-portfolio-ix/static/js/main.86eabea7.js",
+    "main.js": "/ramy-portfolio-ix/static/js/main.6256df9f.js",
     "static/js/796.ccec73f0.chunk.js": "/ramy-portfolio-ix/static/js/796.ccec73f0.chunk.js",
     "static/js/165.bef0a0ef.chunk.js": "/ramy-portfolio-ix/static/js/165.bef0a0ef.chunk.js",
     "static/js/453.c8144c22.chunk.js": "/ramy-portfolio-ix/static/js/453.c8144c22.chunk.js",
@@ -11,13 +11,13 @@
     "static/media/3.avif": "/ramy-portfolio-ix/static/media/3.a83def44fbc13d0dcedc.avif",
     "index.html": "/ramy-portfolio-ix/index.html",
     "main.b5371597.css.map": "/ramy-portfolio-ix/static/css/main.b5371597.css.map",
-    "main.86eabea7.js.map": "/ramy-portfolio-ix/static/js/main.86eabea7.js.map",
+    "main.6256df9f.js.map": "/ramy-portfolio-ix/static/js/main.6256df9f.js.map",
     "796.ccec73f0.chunk.js.map": "/ramy-portfolio-ix/static/js/796.ccec73f0.chunk.js.map",
     "165.bef0a0ef.chunk.js.map": "/ramy-portfolio-ix/static/js/165.bef0a0ef.chunk.js.map",
     "453.c8144c22.chunk.js.map": "/ramy-portfolio-ix/static/js/453.c8144c22.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b5371597.css",
-    "static/js/main.86eabea7.js"
+    "static/js/main.6256df9f.js"
   ]
 }
