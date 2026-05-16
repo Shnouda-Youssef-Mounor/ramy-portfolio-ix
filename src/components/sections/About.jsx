@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import "../../styles/About.css";
 import avatarPhoto from "../../assets/avatars/2.avif";
@@ -11,10 +11,7 @@ const scrollToSection = (sectionId) => {
 };
 
 const BrowseButton = () => (
-  <button
-    onClick={() => scrollToSection("works")}
-    className="browse-work-button"
-  >
+  <button onClick={() => scrollToSection("works")} className="cta">
     <span className="button-text">Browse My Work</span>
     <svg
       className="button-icon"
@@ -27,11 +24,15 @@ const BrowseButton = () => (
 );
 
 const About = () => {
-  const { scrollY } = useScroll();
+  const sectionRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"],
+  });
 
   // الصورة تنزل مع التمرير وتتلاشى
-  const imgY = useTransform(scrollY, [200, 700], [0, 80]);
-  const imgOpacity = useTransform(scrollY, [200, 650], [1, 0]);
+  const imgY = useTransform(scrollYProgress, [0, 0.3, 1], [0, 40, 80]);
+  const imgOpacity = useTransform(scrollYProgress, [0, 0.6, 1], [1, 0.3, 0]);
 
   // المحتوى يطلع من الأسفل عند الدخول
   const contentVariants = {
@@ -44,7 +45,7 @@ const About = () => {
   };
 
   return (
-    <section className="about-section">
+    <section className="about-section" ref={sectionRef}>
       <div className="about-avatar">
         <motion.img
           src={avatarPhoto}

@@ -3,13 +3,13 @@
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: var(--gap);
-  height: 420px;
+  min-height: 420px;
   align-items: stretch;
-    background: #0d0d0d;
-      border: 1px solid var(--border);
+  background: #0d0d0d;
+  border: 1px solid var(--border);
   border-radius: var(--radius);
   margin-top: 32px;
-
+  padding: 24px;
 }
 
 /* LEFT — content */
@@ -162,8 +162,8 @@
     grid-template-columns: 1fr;
     height: auto;
   }
-  .contactus-content { height: 500px; padding: 32px; }
-  .contactus-avatar  { height: 500px; }
+  .contactus-content { min-height: auto; padding: 32px; }
+  .contactus-avatar  { min-height: 320px; }
   .contactus-items   { flex-direction: column; }
 }
 

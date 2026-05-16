@@ -24,6 +24,8 @@ margin-top: 32px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
 }
 
 .user { display: flex; align-items: center; gap: 12px; }
@@ -56,12 +58,15 @@ margin-top: 32px;
   background: rgba(255,255,255,0.05);
 }
 
+/* Button */
 .cta {
-  padding: 8px 18px;
-  border-radius: 40px;
-
-
-   border: 0px solid rgba(255,255,255,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.1);
   background: rgba(13, 13, 13, 0.5);
   backdrop-filter: blur(10px);
   box-shadow:
@@ -69,24 +74,28 @@ margin-top: 32px;
     rgba(0,0,0,0.1) 0px 2px 2px -1px,
     rgba(255,255,255,0.1) 0px 0px 0px 1px;
   color: #F5F5F8;
-    outline-offset: 0px;
-    outline-width: 0px;
-
   cursor: pointer;
-  font-size: 12px;
+  font-family: "Satoshi", sans-serif;
+  font-size: 14px;
   font-weight: 500;
-  transition: background 0.2s, color 0.2s, border-color 0.2s;
+  letter-spacing: -0.02em;
+  outline: 2px solid transparent;
+  outline-offset: 0px;
+  transition:
+    background 0.6s ease,
+    box-shadow 0.6s ease,
+    outline-color 0.6s ease,
+    outline-offset 0.6s ease;
 }
-.cta:hover {  
-   background: rgba(13,13,13,0.8);
-   
+.cta:hover {
+  background: rgba(13,13,13,0.8);
   outline-color: rgba(255,255,255,0.25);
-  outline-offset: 8px;
-  outline-width: 4px;
+  outline-offset: 4px;
   box-shadow:
     rgba(0,0,0,0.2) 0px 6px 14px -2px,
     rgba(255,255,255,0.12) 0px 0px 0px 1px;
- }
+}
+.cta svg { flex-shrink: 0; }
 
 .title {
     margin-top: 16px;
@@ -135,11 +144,16 @@ margin-top: 32px;
 
 .avatar-img {
   position: absolute;
-  bottom: 0; left: 0; right: 0;
-  width: 100%;
-  height: 100%;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  /* horizontal centering handled by framer-motion `x` */
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
   object-fit: contain;
-  object-position: bottom center;
+  object-position: center;
   z-index: 2;
   pointer-events: none;
   will-change: transform, opacity;
@@ -151,8 +165,13 @@ margin-top: 32px;
     grid-template-columns: 1fr;
     height: auto;
   }
-  .hero-card.left  { height: 500px; padding: 32px; }
-  .hero-card.right { height: 500px; }
+  .hero-card.left {
+    min-height: 420px;
+    padding: 32px;
+  }
+  .hero-card.right {
+    min-height: 420px;
+  }
   .title { font-size: 1.6rem; }
 }
 

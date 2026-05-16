@@ -249,14 +249,23 @@ function TwinklingStars() {
 // ─── Hero ─────────────────────────────────────────────────────────────────────
 const Hero = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const sectionRef = useRef(null);
   const cardRef = useRef();
 
-  const { scrollY } = useScroll();
-  const avatarY = useTransform(scrollY, [0, 400], [0, 120]);
-  const avatarOpacity = useTransform(scrollY, [0, 350], [1, 0]);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"],
+  });
+
+  const avatarY = useTransform(scrollYProgress, [0, 0.35, 1], [0, -60, 120]);
+  const avatarOpacity = useTransform(
+    scrollYProgress,
+    [0, 0.3, 0.9, 1],
+    [1, 0.9, 0.3, 0],
+  );
 
   return (
-    <section className="hero-wrapper">
+    <section className="hero-wrapper" ref={sectionRef}>
       <div className="hero-card left">
         <div className="top-row">
           <div className="user">
@@ -301,7 +310,7 @@ const Hero = () => {
         <motion.img
           src={avatarPhoto}
           alt="avatar"
-          style={{ y: avatarY, opacity: avatarOpacity }}
+          style={{ x: "-50%", y: avatarY, opacity: avatarOpacity }}
           className="avatar-img"
         />
       </div>
